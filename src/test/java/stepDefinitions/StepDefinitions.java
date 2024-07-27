@@ -4,12 +4,13 @@ import com.microsoft.playwright.Playwright;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import steps.LoginSteps;
-import utils.PlaywrightManager;
-import utils.PlaywrightManager;
+import utils.WebDriverManager;
 import com.microsoft.playwright.*;
 
+import java.sql.Driver;
+
 public class StepDefinitions {
-    Page page = PlaywrightManager.getPage();
+    WebDriver driver = WebDriverManager.getDriver();
     LoginSteps loginSteps = new LoginSteps();
 
     @Given("User is on Login Page")
