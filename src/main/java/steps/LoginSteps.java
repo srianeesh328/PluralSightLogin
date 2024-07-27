@@ -12,7 +12,6 @@ public class LoginSteps {
 
     @Given("User is on Login Page")
     public void user_is_on_login_page() {
-        // Initialize WebDriver and navigate to the login page
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\srian\\Downloads\\latestchromedriver\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://pluralsight.com/login");
@@ -20,7 +19,6 @@ public class LoginSteps {
 
     @When("User enters valid {string} and {string}")
     public void user_enters_valid_and(String username, String password) {
-        // Enter username and password
         WebElement usernameField = driver.findElement(By.id("Username"));
         WebElement passwordField = driver.findElement(By.id("Password"));
         usernameField.sendKeys(username);
@@ -29,14 +27,12 @@ public class LoginSteps {
 
     @When("User clicks on login button")
     public void user_clicks_on_login_button() {
-        // Click the login button
         WebElement loginButton = driver.findElement(By.id("login"));
         loginButton.click();
     }
 
     @Then("User is redirected to the Home Page")
     public void user_is_redirected_to_the_home_page() {
-        // Verify that the user is redirected to the home page
         String expectedUrl = "https://www.pluralsight.com/";
         String actualUrl = driver.getCurrentUrl();
         assert(expectedUrl.equals(actualUrl));
